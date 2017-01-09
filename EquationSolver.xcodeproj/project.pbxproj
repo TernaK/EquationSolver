@@ -27,7 +27,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		51E8D98A1E22258800E777C5 /* Equation Solver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Equation Solver"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51E8D98A1E22258800E777C5 /* EquationSolver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EquationSolver; sourceTree = BUILT_PRODUCTS_DIR; };
 		51E8D98D1E22258800E777C5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		51E8D9941E22CB0C00E777C5 /* Ocr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ocr.cpp; sourceTree = "<group>"; };
 		51E8D9951E22CB0C00E777C5 /* Ocr.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Ocr.hpp; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		51E8D9811E22258800E777C5 = {
 			isa = PBXGroup;
 			children = (
-				51E8D98C1E22258800E777C5 /* Equation Solver */,
+				51E8D98C1E22258800E777C5 /* EquationSolver */,
 				51E8D98B1E22258800E777C5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,12 +63,12 @@
 		51E8D98B1E22258800E777C5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				51E8D98A1E22258800E777C5 /* Equation Solver */,
+				51E8D98A1E22258800E777C5 /* EquationSolver */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		51E8D98C1E22258800E777C5 /* Equation Solver */ = {
+		51E8D98C1E22258800E777C5 /* EquationSolver */ = {
 			isa = PBXGroup;
 			children = (
 				51E8D98D1E22258800E777C5 /* main.cpp */,
@@ -83,15 +83,16 @@
 				51E8D9941E22CB0C00E777C5 /* Ocr.cpp */,
 				51E8D9951E22CB0C00E777C5 /* Ocr.hpp */,
 			);
+			name = EquationSolver;
 			path = "Equation Solver";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		51E8D9891E22258800E777C5 /* Equation Solver */ = {
+		51E8D9891E22258800E777C5 /* EquationSolver */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 51E8D9911E22258800E777C5 /* Build configuration list for PBXNativeTarget "Equation Solver" */;
+			buildConfigurationList = 51E8D9911E22258800E777C5 /* Build configuration list for PBXNativeTarget "EquationSolver" */;
 			buildPhases = (
 				51E8D9861E22258800E777C5 /* Sources */,
 				51E8D9871E22258800E777C5 /* Frameworks */,
@@ -101,9 +102,9 @@
 			);
 			dependencies = (
 			);
-			name = "Equation Solver";
+			name = EquationSolver;
 			productName = "Equation Solver";
-			productReference = 51E8D98A1E22258800E777C5 /* Equation Solver */;
+			productReference = 51E8D98A1E22258800E777C5 /* EquationSolver */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -120,7 +121,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 51E8D9851E22258800E777C5 /* Build configuration list for PBXProject "Equation Solver" */;
+			buildConfigurationList = 51E8D9851E22258800E777C5 /* Build configuration list for PBXProject "EquationSolver" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -132,7 +133,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				51E8D9891E22258800E777C5 /* Equation Solver */,
+				51E8D9891E22258800E777C5 /* EquationSolver */,
 			);
 		};
 /* End PBXProject section */
@@ -248,7 +249,7 @@
 					"-lopencv_calib3d",
 					"-lopencv_imgcodecs",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EquationSolver;
 			};
 			name = Debug;
 		};
@@ -266,14 +267,14 @@
 					"-lopencv_calib3d",
 					"-lopencv_imgcodecs",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EquationSolver;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		51E8D9851E22258800E777C5 /* Build configuration list for PBXProject "Equation Solver" */ = {
+		51E8D9851E22258800E777C5 /* Build configuration list for PBXProject "EquationSolver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				51E8D98F1E22258800E777C5 /* Debug */,
@@ -282,7 +283,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		51E8D9911E22258800E777C5 /* Build configuration list for PBXNativeTarget "Equation Solver" */ = {
+		51E8D9911E22258800E777C5 /* Build configuration list for PBXNativeTarget "EquationSolver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				51E8D9921E22258800E777C5 /* Debug */,
