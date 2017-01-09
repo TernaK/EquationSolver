@@ -17,7 +17,7 @@ private:
 public:
   Model();
   Model(float *_w1, float *_b1, float *_w2, float *_b2, int nx, int nh, int ny);
-  int feedForward(float *x, float *y);
+  int feedForward(const cv::Mat& x, cv::Mat& y);
 };
 
 #endif /* Model_hpp */

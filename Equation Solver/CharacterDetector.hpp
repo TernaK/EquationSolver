@@ -18,6 +18,7 @@ private:
 public:
   CharactedDetector(std::string modelFile);
   void detectCharacters(const cv::Mat& image, std::vector<char> characters);
+  void getCharRois(const cv::Mat& image, std::vector<cv::Rect>& rois);
 };
 
 #endif /* CharacterDetector_hpp */

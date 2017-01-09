@@ -17,6 +17,6 @@ Model::Model(float *_w1, float *_b1, float *_w2, float *_b2, int nx, int nh, int
   
 }
 
-int Model::feedForward(float *x, float *y){
-  return -1;
+int Model::feedForward(const cv::Mat& x, cv::Mat& y){
+  return 0;
 }
