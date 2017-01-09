@@ -14,5 +14,15 @@
 #include <string>
 #include <opencv2/opencv.hpp>
 #include <fstream>
+#include <vector>
+
+enum OperandType {
+  LIERTAL=0, OPERATION=1
+};
+
+typedef struct Operand {
+  OperandType opType;
+  char value;
+} Operand;
 
 #endif /* EquationSolver_h */

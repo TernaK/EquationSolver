@@ -7,3 +7,7 @@
 //
 
 #include "ModelLoader.hpp"
+
+void ModelLoader::loadModel(std::string fileName, Model& model){
+  
+}

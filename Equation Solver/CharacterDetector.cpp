@@ -7,3 +7,13 @@
 //
 
 #include "CharacterDetector.hpp"
+
+
+CharactedDetector::CharactedDetector(std::string modelFile)
+: ocr(modelFile) {
+}
+
+
+void CharactedDetector::detectCharacters(const cv::Mat& image, std::vector<char> characters){
+  
+}

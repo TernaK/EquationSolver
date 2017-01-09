@@ -15,6 +15,7 @@
 
 class Ocr {
 private:
+  std::vector<char> dictionary;
   Model model;
   void loadModel(std::string modelFile);
   cv::Mat preprocessImage(const cv::Mat& letterImage);

@@ -10,5 +10,14 @@
 #define CharacterDetector_hpp
 
 #include "EquationSolver.hpp"
+#include "Ocr.hpp"
+
+class CharactedDetector {
+private:
+  Ocr ocr;
+public:
+  CharactedDetector(std::string modelFile);
+  void detectCharacters(const cv::Mat& image, std::vector<char> characters);
+};
 
 #endif /* CharacterDetector_hpp */

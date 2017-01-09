@@ -7,3 +7,11 @@
 //
 
 #include "Ocr.hpp"
+
+Ocr::Ocr(std::string modelFile){
+  ModelLoader::loadModel(modelFile, model);
+}
+
+char Ocr::detectLetter(const cv::Mat& image){
+  return 0;
+}
