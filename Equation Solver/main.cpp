@@ -12,7 +12,7 @@ using namespace cv;
 
 int main(int argc, const char * argv[]) {
   
-  Mat image = imread("/Users/Terna/Desktop/test1.jpg");
+  Mat image = imread("/Users/Terna/Desktop/test1.jpg", IMREAD_GRAYSCALE);
 
   CharactedDetector detector("dummy");
   vector<char> chars;
