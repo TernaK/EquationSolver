@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		51E8D98E1E22258800E777C5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51E8D98D1E22258800E777C5 /* main.cpp */; };
+		51E8D9961E22CB0C00E777C5 /* Ocr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51E8D9941E22CB0C00E777C5 /* Ocr.cpp */; };
+		51E8D9991E23273600E777C5 /* CharacterDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51E8D9971E23273600E777C5 /* CharacterDetector.cpp */; };
+		51E8D99D1E23286A00E777C5 /* ModelLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51E8D99B1E23286900E777C5 /* ModelLoader.cpp */; };
+		51E8D9A01E23293100E777C5 /* Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51E8D99E1E23293100E777C5 /* Model.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,16 @@
 /* Begin PBXFileReference section */
 		51E8D98A1E22258800E777C5 /* Equation Solver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Equation Solver"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51E8D98D1E22258800E777C5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		51E8D9941E22CB0C00E777C5 /* Ocr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ocr.cpp; sourceTree = "<group>"; };
+		51E8D9951E22CB0C00E777C5 /* Ocr.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Ocr.hpp; sourceTree = "<group>"; };
+		51E8D9971E23273600E777C5 /* CharacterDetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterDetector.cpp; sourceTree = "<group>"; };
+		51E8D9981E23273600E777C5 /* CharacterDetector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CharacterDetector.hpp; sourceTree = "<group>"; };
+		51E8D99A1E23277300E777C5 /* EquationSolver.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EquationSolver.hpp; sourceTree = "<group>"; };
+		51E8D99B1E23286900E777C5 /* ModelLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ModelLoader.cpp; sourceTree = "<group>"; };
+		51E8D99C1E23286A00E777C5 /* ModelLoader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ModelLoader.hpp; sourceTree = "<group>"; };
+		51E8D99E1E23293100E777C5 /* Model.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Model.cpp; sourceTree = "<group>"; };
+		51E8D99F1E23293100E777C5 /* Model.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Model.hpp; sourceTree = "<group>"; };
+		51E8D9A11E232C3500E777C5 /* dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dictionary.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,16 @@
 			isa = PBXGroup;
 			children = (
 				51E8D98D1E22258800E777C5 /* main.cpp */,
+				51E8D9A11E232C3500E777C5 /* dictionary.txt */,
+				51E8D99A1E23277300E777C5 /* EquationSolver.hpp */,
+				51E8D99E1E23293100E777C5 /* Model.cpp */,
+				51E8D99F1E23293100E777C5 /* Model.hpp */,
+				51E8D99B1E23286900E777C5 /* ModelLoader.cpp */,
+				51E8D99C1E23286A00E777C5 /* ModelLoader.hpp */,
+				51E8D9971E23273600E777C5 /* CharacterDetector.cpp */,
+				51E8D9981E23273600E777C5 /* CharacterDetector.hpp */,
+				51E8D9941E22CB0C00E777C5 /* Ocr.cpp */,
+				51E8D9951E22CB0C00E777C5 /* Ocr.hpp */,
 			);
 			path = "Equation Solver";
 			sourceTree = "<group>";
@@ -118,6 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51E8D99D1E23286A00E777C5 /* ModelLoader.cpp in Sources */,
+				51E8D9991E23273600E777C5 /* CharacterDetector.cpp in Sources */,
+				51E8D9A01E23293100E777C5 /* Model.cpp in Sources */,
+				51E8D9961E22CB0C00E777C5 /* Ocr.cpp in Sources */,
 				51E8D98E1E22258800E777C5 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +237,17 @@
 		51E8D9921E22258800E777C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_LDFLAGS = (
+					"-lopencv_core",
+					"-lopencv_imgproc",
+					"-lopencv_highgui",
+					"-lopencv_ml",
+					"-lopencv_calib3d",
+					"-lopencv_imgcodecs",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -216,6 +255,17 @@
 		51E8D9931E22258800E777C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_LDFLAGS = (
+					"-lopencv_core",
+					"-lopencv_imgproc",
+					"-lopencv_highgui",
+					"-lopencv_ml",
+					"-lopencv_calib3d",
+					"-lopencv_imgcodecs",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
