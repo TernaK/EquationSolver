@@ -18,18 +18,28 @@ CharactedDetector::CharactedDetector(std::string modelFile)
 
 void CharactedDetector::detectCharacters(const cv::Mat& image, std::vector<char> characters){
   Mat equationImage;
-  getEquationImage(image, equationImage);
+  bool equationFound = getEquationImage(image, equationImage);
   
-  //get the rois in sorted order
-  vector<Rect> charRois;
-  
-  //for each roi, get the character
-  for(auto charRoi: charRois){
-    characters.push_back(ocr.detectLetter(image(charRoi)));
+  if(equationFound){
+    namedWindow("equation");
+    imshow("equation", equationImage);
+    waitKey();
   }
+  else {
+    cout << "Could not find equation" << endl;
+  }
+  
+  
+//  //get the rois in sorted order
+//  vector<Rect> charRois;
+//  
+//  //for each roi, get the character
+//  for(auto charRoi: charRois){
+//    characters.push_back(ocr.detectLetter(image(charRoi)));
+//  }
 }
 
-void CharactedDetector::getEquationImage(const cv::Mat& image, Mat& equationImage){
+bool CharactedDetector::getEquationImage(const cv::Mat& image, Mat& equationImage){
   
   //get grayscale
   Mat grayImage;
@@ -48,6 +58,7 @@ void CharactedDetector::getEquationImage(const cv::Mat& image, Mat& equationImag
   vector<vector<Point> > contours;
   findContours(canny, contours, RETR_LIST, CHAIN_APPROX_SIMPLE);
   
+  
   //filter out bad contours
   vector<vector<Point> > approxContours;
   for(auto contour: contours){
@@ -58,23 +69,58 @@ void CharactedDetector::getEquationImage(const cv::Mat& image, Mat& equationImag
       approxContours.push_back(newContour);
   }
   
+  if(approxContours.size() < 1)
+    return false;
+  
   Rect eqRect;
   getMostProbableRectFromContours(approxContours, image.cols, image.rows, eqRect);
   
+  if(eqRect.width > 0){
+    equationImage = image(eqRect);
+    return true;
+  }
+  
+  return false;
+  
   //draw
 //  drawContours(image, approxContours, -1, Scalar(0,255,0), 2);
-  Mat imageClone = image.clone();
-  rectangle(imageClone, eqRect, Scalar(0,255,0));
+  //Mat imageClone = image.clone();
+  //rectangle(imageClone, eqRect, Scalar(0,255,0));
   
 //  cout << contours.size() << endl;
   
-  namedWindow("contours");
-  imshow("contours", imageClone);
-  waitKey();
+//  namedWindow("contours");
+//  imshow("contours", imageClone);
+//  waitKey();
   
 }
 
+bool compareContourAreasDesc ( std::vector<cv::Point> contour1, std::vector<cv::Point> contour2 ) {
+  double i = fabs( contourArea(cv::Mat(contour1)) );
+  double j = fabs( contourArea(cv::Mat(contour2)) );
+  return ( i > j );
+}
+
 void CharactedDetector::getMostProbableRectFromContours(const std::vector<std::vector<cv::Point> > contours, int width, int height, cv::Rect& roi){
+  
+  int border = 10;
+  
+  int maxIndex = 0;
+  int maxArea = 0;
+  for(int i = 0; i < contours.size(); i++){
+    double area = fabs( contourArea(cv::Mat(contours[i])) );
+    if(area > maxArea){
+      maxArea = area;
+      maxIndex = i;
+    }
+  }
+  
+  roi = Rect(contours[maxIndex][0], contours[maxIndex][2]);
+  roi.x += border;
+  roi.y += border;
+  roi.width -= border*2;
+  roi.height -= border*2;
+  /*
   
   int dim = 100;
   
@@ -124,9 +170,7 @@ void CharactedDetector::getMostProbableRectFromContours(const std::vector<std::v
   yLen = maxLoc.x * height / dim;
   
   roi = Rect(cx-xLen/2, cy-yLen/2, xLen, yLen);
-//  namedWindow("contours");
-//  imshow("contours", image);
-//  waitKey();
+  */
 }
 
 

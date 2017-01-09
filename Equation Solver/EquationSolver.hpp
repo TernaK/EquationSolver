@@ -16,6 +16,7 @@
 #include <fstream>
 #include <vector>
 
+
 enum OperandType {
   LIERTAL=0, OPERATION=1
 };
