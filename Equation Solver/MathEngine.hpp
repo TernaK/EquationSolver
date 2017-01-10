@@ -38,16 +38,17 @@ typedef struct MathOp {
 class MathEngine {
 private:
   std::stack<MathOp> operatorStack;
-  std::list<MathOp> opList;
+  std::list<MathOp> infixOpList;
   std::vector<MathOp> parsedExpression;
   
-  void setMathOpList(std::string equationString);
-  float solveFromOpList();
+  void setInfixOpList();
   void setParsedExpression(std::string equationString);
+  float solveFromInfixOpList();
 public:
   MathEngine();
   float evaluate(std::string equationString);
   void printParsedExpression();
+  void printInfixOpList();
 };
 
 #endif /* MathEngine_hpp */

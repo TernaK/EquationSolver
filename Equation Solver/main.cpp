@@ -16,8 +16,13 @@ void testMathEnginEvaluate(){
   MathEngine engine;
   engine.evaluate("5*7");
   engine.printParsedExpression();
-  engine.evaluate("34*7/20");
+  engine.printInfixOpList();
+  engine.evaluate("34*7/20-4");
   engine.printParsedExpression();
+  engine.printInfixOpList();
+  engine.evaluate("5*8/20-4*2*6*7+5*5");
+  engine.printParsedExpression();
+  engine.printInfixOpList();
 }
 
 void testCharactedDetector(){
