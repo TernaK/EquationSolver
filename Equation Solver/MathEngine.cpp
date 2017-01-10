@@ -52,6 +52,8 @@ void MathEngine::MathEngine::setParsedExpression(std::string equationString){
     parsedExpression.push_back(op);
     i--;//remove one to keep the for loop in sequence
   }
+  
+  setParsedExpressionString();
 }
 
 void MathEngine::setInfixOpList(){
@@ -71,7 +73,7 @@ void MathEngine::setInfixOpList(){
       else{
         MathOp top = operatorStack.top();
         //while top is higher priority, push to infix, pop from stack
-        while((top.opPriority > op.opPriority) && !operatorStack.empty()){
+        while((top.opPriority >= op.opPriority) && !operatorStack.empty()){
           infixOpList.push_back(top);
           operatorStack.pop();
           //reset the top
@@ -87,14 +89,59 @@ void MathEngine::setInfixOpList(){
     operatorStack.pop();
   }
   
+  setInfixExpressionString();
 }
 
 float MathEngine::solveFromInfixOpList(){
-  list<MathOp>::iterator it1;
-  list<MathOp>::iterator it2;
-  list<MathOp>::iterator it3;
+  list<MathOp>::iterator it1 = infixOpList.begin();
+  list<MathOp>::iterator it2 = infixOpList.begin();
+  list<MathOp>::iterator it3 = infixOpList.begin();
+  it1++; it1++;
+  it2++;
   
-  return 0;
+  float subResult = 0;
+  while (true) {
+    
+    if(it1->opType != OPERAND){
+      
+      switch (it1->opType) {
+        case MULT:
+          subResult = it3->value*it2->value;
+          break;
+        case DIV:
+          subResult = it3->value/it2->value;
+          break;
+        case PLUS:
+          subResult = it3->value+it2->value;
+          break;
+        case MINUS:
+          subResult = it3->value-it2->value;
+          break;
+        case OPERAND: break;//never gets here
+      }
+      
+      //cout << it3->value << it1->valueString << it2->value << " = " << subResult << endl;
+      if(infixOpList.size() == 3){
+        break;
+      }
+      
+      it3->value = subResult;
+      infixOpList.erase(it1);
+      infixOpList.erase(it2);
+    }
+    else{
+      it1++; it2++; it3++;
+      continue;
+    }
+    
+    it1 = infixOpList.begin();
+    it2 = infixOpList.begin();
+    it3 = infixOpList.begin();
+    it1++; it1++;
+    it2++;
+  }
+  
+  return subResult;//dummy
 }
 
 float MathEngine::evaluate(std::string equationString){
@@ -104,20 +151,18 @@ float MathEngine::evaluate(std::string equationString){
   return solveFromInfixOpList();
 }
 
-void MathEngine::printParsedExpression(){
-  cout << "parsed expression: " ;
+void MathEngine::setParsedExpressionString(){
+  parsedExpressionString = "";
   for(int i = 0; i < parsedExpression.size(); i++){
-    cout << parsedExpression[i].valueString << " ";
+    parsedExpressionString += parsedExpression[i].valueString + " ";
   }
-  cout << endl;
 }
 
 
-void MathEngine::printInfixOpList(){
-  cout << "parsed infix expression: " ;
+void MathEngine::setInfixExpressionString(){
+  infixExpressionString = "";
   list<MathOp>::iterator iter;
   for(iter = infixOpList.begin(); iter != infixOpList.end(); iter++){
-    cout << iter->valueString << " ";
+    infixExpressionString += iter->valueString + " ";
   }
-  cout << endl;
 }

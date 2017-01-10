@@ -41,14 +41,20 @@ private:
   std::list<MathOp> infixOpList;
   std::vector<MathOp> parsedExpression;
   
+  std::string infixExpressionString;
+  std::string parsedExpressionString;
+  
   void setInfixOpList();
   void setParsedExpression(std::string equationString);
   float solveFromInfixOpList();
+  
 public:
   MathEngine();
   float evaluate(std::string equationString);
-  void printParsedExpression();
-  void printInfixOpList();
+  void setParsedExpressionString();
+  void setInfixExpressionString();
+  std::string getInfixString(){ return infixExpressionString; };
+  std::string getParsedString(){ return  parsedExpressionString; };
 };
 
 #endif /* MathEngine_hpp */

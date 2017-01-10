@@ -14,15 +14,25 @@ using namespace cv;
 void testMathEnginEvaluate(){
 
   MathEngine engine;
-  engine.evaluate("5*7");
-  engine.printParsedExpression();
-  engine.printInfixOpList();
-  engine.evaluate("34*7/20-4");
-  engine.printParsedExpression();
-  engine.printInfixOpList();
-  engine.evaluate("5*8/20-4*2*6*7+5*5");
-  engine.printParsedExpression();
-  engine.printInfixOpList();
+  float res = engine.evaluate("5*7");
+  cout << "parsed expression: " << engine.getParsedString() << endl;
+  cout  << "parsed infix expression: " << engine.getInfixString() << endl;
+  cout << "result: " << res << "  expected: " << 5.0f*7 << endl << endl;
+  
+  res = engine.evaluate("0-3*2");
+  cout << "parsed expression: " << engine.getParsedString() << endl;
+  cout  << "parsed infix expression: " << engine.getInfixString() << endl;
+  cout << "result: " << res << "  expected: " << 0-3*2 << endl << endl;
+  
+  res = engine.evaluate("34*7/20-4");
+  cout << "parsed expression: " << engine.getParsedString() << endl;
+  cout << "parsed infix expression: " << engine.getInfixString() << endl;
+  cout << "result: " << res << "  expected: " << 34.0f*7/20-4 << endl << endl;
+  
+  res = engine.evaluate("5*8/20-4*2*6*7+5*5");
+  cout << "parsed expression: " << engine.getParsedString() << endl;
+  cout << "parsed infix expression: " << engine.getInfixString() << endl;
+  cout << "result: " << res << "  expected: " << 5.0f*8/20-4*2*6*7+5*5 << endl << endl;
 }
 
 void testCharactedDetector(){
