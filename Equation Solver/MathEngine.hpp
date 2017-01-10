@@ -48,11 +48,12 @@ private:
   void setParsedExpression(std::string equationString);
   float solveFromInfixOpList();
   
+  void setParsedExpressionString();
+  void setInfixExpressionString();
+  
 public:
   MathEngine();
   float evaluate(std::string equationString);
-  void setParsedExpressionString();
-  void setInfixExpressionString();
   std::string getInfixString(){ return infixExpressionString; };
   std::string getParsedString(){ return  parsedExpressionString; };
 };
