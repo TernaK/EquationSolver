@@ -118,6 +118,10 @@ void CharactedDetector::getCharRois(cv::Mat& image, std::vector<cv::Rect>& rois)
   Mat labels, stats, centroids;
   int numObjects = connectedComponentsWithStats(image, labels, stats, centroids);
   
+  //need at least two operands & one operation
+  if(numObjects < 3)
+    return;
+  
   //get components stats (area)
   Mat areaMat = stats.col(4);
   double min, max;
