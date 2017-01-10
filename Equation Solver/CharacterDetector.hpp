@@ -15,7 +15,7 @@
 class CharactedDetector {
 private:
   Ocr ocr;
-  void getCharRois(const cv::Mat& image, std::vector<cv::Rect>& rois);
+  void getCharRois(cv::Mat& image, std::vector<cv::Rect>& rois);
   bool getEquationImage(const cv::Mat& image, cv::Mat& equationImage);
   void getMostProbableRectFromContours(const std::vector<std::vector<cv::Point> > contours, int width, int height, cv::Rect& roi);
 public:
