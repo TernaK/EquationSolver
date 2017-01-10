@@ -7,15 +7,28 @@
 //
 
 #include "CharacterDetector.hpp"
+#include "MathEngine.hpp"
 using namespace std;
 using namespace cv;
 
-int main(int argc, const char * argv[]) {
-  
-  Mat image = imread("/Users/Terna/Desktop/test1.png", IMREAD_GRAYSCALE);
+void testMathEnginEvaluate(){
 
+  MathEngine engine;
+  engine.evaluate("5*7");
+  engine.printParsedExpression();
+  engine.evaluate("34*7/20");
+  engine.printParsedExpression();
+}
+
+void testCharactedDetector(){
+  Mat image = imread("/Users/Terna/Desktop/test1.png", IMREAD_GRAYSCALE);
+  
   CharactedDetector detector("dummy");
   vector<char> chars;
   detector.detectCharacters(image, chars);
-  
+}
+
+int main(int argc, const char * argv[]) {
+
+  testMathEnginEvaluate();
 }
