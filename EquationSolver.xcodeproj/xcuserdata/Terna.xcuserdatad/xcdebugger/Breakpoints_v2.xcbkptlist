@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Equation Solver/MathEngine.cpp"
-            timestampString = "505771592.598745"
+            filePath = "Equation Solver/main.cpp"
+            timestampString = "505734009.021158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "MathEngine::solveFromInfixOpList()"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "testMathEnginEvaluate()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
