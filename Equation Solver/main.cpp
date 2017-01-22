@@ -5,9 +5,9 @@
 //  Created by Terna Kpamber on 1/7/17.
 //  Copyright © 2017 Terna Kpamber. All rights reserved.
 //
-
 #include "CharacterDetector.hpp"
 #include "MathEngine.hpp"
+#include "DataExtractor.hpp"
 using namespace std;
 using namespace cv;
 
@@ -43,7 +43,20 @@ void testCharactedDetector(){
   detector.detectCharacters(image, chars);
 }
 
-int main(int argc, const char * argv[]) {
+void testDataExtractor(){
+  Mat image = imread("/Users/Terna/Desktop/test2.jpg", IMREAD_GRAYSCALE);
+  DataExtractor de = DataExtractor(image, "", 5, 6, 1);
+  vector<Point> bounds = {Point(149,120), Point(439,112), Point(445,348), Point(159,361)};
+  vector<Mat> samples;
+  de.getImages(samples, bounds);
+  
+  for(auto sample: samples){
+    namedWindow("extracted");
+    imshow("extracted", sample) ;
+    waitKey();
+  }
+}
 
-  testMathEnginEvaluate();
+int main(int argc, const char * argv[]) {
+  testDataExtractor();
 }

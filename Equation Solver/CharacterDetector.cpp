@@ -65,7 +65,7 @@ bool CharactedDetector::getEquationImage(const cv::Mat& image, Mat& equationImag
     return false;
   
   Rect eqRect;
-  getMostProbableRectFromContours(approxContours, image.cols, image.rows, eqRect);
+  getMostProbableRectFromContours(approxContours, eqRect);
   
   if(eqRect.width > 0){
     equationImage = grayImage(eqRect).clone();
@@ -80,7 +80,7 @@ bool compareRectXPos ( cv::Rect rect1, cv::Rect rect2 ) {
   return rect1.x < rect2.x;
 }
 
-void CharactedDetector::getMostProbableRectFromContours(const std::vector<std::vector<cv::Point> > contours, int width, int height, cv::Rect& roi){
+void CharactedDetector::getMostProbableRectFromContours(const std::vector<std::vector<cv::Point> > contours, cv::Rect& roi){
   
   int border = 10;
   
