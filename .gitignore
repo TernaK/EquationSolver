@@ -1,0 +1,3 @@
+equation_solver_caffe/*_lmdb
+equation_solver_caffe/snap*
+equation_solver_caffe/*.caffemodel

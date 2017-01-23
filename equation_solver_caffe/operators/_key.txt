@@ -1,0 +1,4 @@
+plus: 10
+minus: 11
+divide: 12
+multiply: 13
