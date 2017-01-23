@@ -11,7 +11,7 @@
 
 #include "EquationSolver.hpp"
 
-#define MAP_SQUARE_SIZE 100
+#define MAP_SQUARE_SIZE 28
 
 /* This class may be used to quickly extract training data from a grid arrangement
  * on paper.

@@ -49,7 +49,7 @@ bool DataExtractor::getBounds(const cv::Mat& dataImage, std::vector<cv::Point>& 
   vector<vector<Point>> approxContours;
   for(auto contour: originalContours){
     vector<Point> approxContour;
-    approxPolyDP(contour, approxContour, 50, true);
+    approxPolyDP(contour, approxContour, 10, true);
     approxContours.push_back(approxContour);
   }
   
@@ -98,9 +98,9 @@ bool DataExtractor::getTransformedBoundsImage(const Mat& dataImage, const vector
   int height = MAP_SQUARE_SIZE * rows;
   vector< Point2f> mappedPointsOutput = {
     Point2f(0,0),
-    Point2f(width,0),
-    Point2f(width,height),
     Point2f(0,height),
+    Point2f(width,height),
+    Point2f(width,0),
   };
   
   //convert Point<int> to Point<float>: the input mapping
@@ -123,9 +123,9 @@ bool DataExtractor::getImagesCommon(const cv::Mat& gray, std::vector<cv::Mat>& s
   Mat dataImage;
   getTransformedBoundsImage(gray, bounds, dataImage);
   
-  //  namedWindow("extracted");
-  //  imshow("extracted", dataImage);
-  //  waitKey();
+//    namedWindow("extracted");
+//    imshow("extracted", dataImage);
+//    waitKey();
   
   for(int i = border ; i < rows-border; i++){
     int row = i * MAP_SQUARE_SIZE;

@@ -36,27 +36,50 @@ void testMathEnginEvaluate(){
 }
 
 void testCharactedDetector(){
-  Mat image = imread("/Users/Terna/Desktop/test1.png", IMREAD_GRAYSCALE);
+  Mat image = imread("data/test1.png", IMREAD_GRAYSCALE);
   
   CharactedDetector detector("dummy");
   vector<char> chars;
   detector.detectCharacters(image, chars);
 }
 
-void testDataExtractor(){
-  Mat image = imread("/Users/Terna/Desktop/test2.jpg", IMREAD_GRAYSCALE);
-  DataExtractor de = DataExtractor(image, "", 5, 6, 1);
+void testDataExtractor(string fileName){
+  Mat image = imread(fileName, IMREAD_GRAYSCALE);
+  resize(image, image, image.size()/6);
+  DataExtractor de = DataExtractor(image, "", 15, 15, 1);
   vector<Point> bounds = {Point(149,120), Point(439,112), Point(445,348), Point(159,361)};
   vector<Mat> samples;
-  de.getImages(samples, bounds);
+  de.getImages(samples);
   
   for(auto sample: samples){
+    Mat binary;
+    adaptiveThreshold(sample, binary, 255, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY_INV, 25, 15);
     namedWindow("extracted");
-    imshow("extracted", sample) ;
+    imshow("extracted", binary) ;
     waitKey();
   }
 }
 
+void runDataExtractor(string fileName, string savePrefix){
+  
+  Mat image = imread(fileName, IMREAD_GRAYSCALE);
+  resize(image, image, image.size()/6);
+  DataExtractor de = DataExtractor(image, "", 15, 15, 1);
+  vector<Point> bounds = {Point(149,120), Point(439,112), Point(445,348), Point(159,361)};
+  vector<Mat> samples;
+  de.getImages(samples);
+  
+  int i = 0;
+  for(auto sample: samples){
+    Mat binary;
+    adaptiveThreshold(sample, binary, 255, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY_INV, 25, 15);
+    //may have to process data before writing
+    imwrite(savePrefix+to_string(i)+".jpg", binary);
+    i++;
+  }
+}
+
 int main(int argc, const char * argv[]) {
-  testDataExtractor();
+//  testDataExtractor("data/multiply.jpg");
+  runDataExtractor("data/multiply.jpg","/Users/Terna/Desktop/operators/multiply/");
 }
