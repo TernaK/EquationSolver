@@ -171,3 +171,78 @@ bool DataExtractor::getImages(std::vector<cv::Mat>& samples, const std::vector<c
 bool DataExtractor::writeToFoldersAndFiles(const std::vector<cv::Mat>& samples, std::string imageData){
   return true;
 }
+
+void DataExtractor::refitSample(const cv::Mat& image, const cv::Mat binaryImage, cv::Mat& refittedImage, int innerDim, int outerDim){
+  
+  //get roi
+  //label binary
+  //close
+  Mat closed;
+  Mat morphElement = getStructuringElement(MorphShapes::MORPH_ELLIPSE, Size(3,3));
+  morphologyEx(255-binaryImage, closed, MorphTypes::MORPH_CLOSE, morphElement);
+  
+  //get connected components
+  Mat labels, stats, centroids;
+  int numObjects = connectedComponentsWithStats(closed, labels, stats, centroids);
+  
+  //largest area (background)
+  int max1 = 0, max2 = 0;
+  int maxIdx1 = 0, maxIdx2 = 0;
+  for(int i = 0; i < stats.rows; i++){
+    int area = stats.at<int>(Point(0,i));
+    if(area > max1){
+      max1 = area;
+      maxIdx1 = i;
+    }
+  }
+  
+  //second largest area (letter)
+  for(int i = 0; i < stats.rows; i++){
+    if(i == maxIdx1) continue;
+    int area = stats.at<int>(Point(0,i));
+    if(area > max2){
+      max2 = area;
+      maxIdx2 = i;
+    }
+  }
+  
+  Rect roi(stats.at<int>(Point(0,maxIdx2)),
+           stats.at<int>(Point(1,maxIdx2)),
+           stats.at<int>(Point(2,maxIdx2)),
+           stats.at<int>(Point(3,maxIdx2)) );
+  
+  //find larger dimension
+  float _width = roi.width;
+  float _height = roi.height;
+  int width, height;
+  
+  //set dimensions
+  if(_width > _height){ //width
+    height = round(_height/_width * innerDim);
+    width = innerDim;
+  }
+  else{
+    width = round(_width/_height * innerDim);
+    height = innerDim;
+  }
+  
+  //offset
+  int x = (outerDim - width)/2;
+  int y = (outerDim - height)/2;
+  
+  //resize
+  Mat inner = image(roi);
+  resize(inner, inner, Size(width, height));
+  
+  Mat binary;
+  adaptiveThreshold(inner, binary, 255, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY_INV, 17, 10);
+  
+  //place inside
+  refittedImage = Mat::zeros(outerDim, outerDim, CV_8U);
+  binary.copyTo(refittedImage(Rect(x,y,width,height)));
+  
+  
+  imshow("test", refittedImage);
+  waitKey();
+  
+}

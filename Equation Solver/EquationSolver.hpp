@@ -5,9 +5,8 @@
 //  Created by Terna Kpamber on 1/8/17.
 //  Copyright © 2017 Terna Kpamber. All rights reserved.
 //
-
-#ifndef EquationSolver_h
-#define EquationSolver_h
+#ifndef EquationSolver_hpp
+#define EquationSolver_hpp
 
 #include <stdio.h>
 #include <iostream>
@@ -16,4 +15,4 @@
 #include <fstream>
 #include <vector>
 
-#endif /* EquationSolver_h */
+#endif /* EquationSolver_hpp */

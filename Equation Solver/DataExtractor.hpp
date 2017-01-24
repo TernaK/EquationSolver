@@ -12,6 +12,8 @@
 #include "EquationSolver.hpp"
 
 #define MAP_SQUARE_SIZE 28
+#define INNER_DIM 20
+#define OUTER_DIM 28
 
 /* This class may be used to quickly extract training data from a grid arrangement
  * on paper.
@@ -66,6 +68,12 @@ public:
    * imageData: TODO
    */
   bool writeToFoldersAndFiles(const std::vector<cv::Mat>& samples, std::string imageData);
+  
+  /* Refit a sample image to the correct dimensions
+   * image: the image to refit
+   
+   */
+  static void refitSample(const cv::Mat& image, const cv::Mat binaryImage, cv::Mat& refittedImage, int innerDim=INNER_DIM, int outerDim=OUTER_DIM);
 };
 
 

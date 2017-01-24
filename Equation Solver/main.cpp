@@ -52,8 +52,18 @@ void testDataExtractor(string fileName){
   de.getImages(samples);
   
   for(auto sample: samples){
+    
+    //get binary
     Mat binary;
     adaptiveThreshold(sample, binary, 255, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY_INV, 25, 15);
+    
+    //refit
+    DataExtractor::refitSample(sample, binary, sample);
+    
+    //binarize once more
+    adaptiveThreshold(sample, binary, 255, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY_INV, 25, 15);
+    
+    
     namedWindow("extracted");
     imshow("extracted", binary) ;
     waitKey();
@@ -80,6 +90,6 @@ void runDataExtractor(string fileName, string savePrefix){
 }
 
 int main(int argc, const char * argv[]) {
-//  testDataExtractor("data/multiply.jpg");
-  runDataExtractor("data/multiply.jpg","/Users/Terna/Desktop/operators/multiply/");
+  testDataExtractor("data/multiply.jpg");
+//  runDataExtractor("data/multiply.jpg","/Users/Terna/Desktop/operators/multiply/");
 }
