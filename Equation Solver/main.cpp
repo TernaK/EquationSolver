@@ -61,7 +61,7 @@ void testDataExtractor(string fileName){
     DataExtractor::refitSample(sample, binary, sample);
     
     //binarize once more
-    adaptiveThreshold(sample, binary, 255, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY_INV, 25, 15);
+//    adaptiveThreshold(sample, binary, 255, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY_INV, 25, 15);
     
     
     namedWindow("extracted");
@@ -75,21 +75,25 @@ void runDataExtractor(string fileName, string savePrefix){
   Mat image = imread(fileName, IMREAD_GRAYSCALE);
   resize(image, image, image.size()/6);
   DataExtractor de = DataExtractor(image, "", 15, 15, 1);
-  vector<Point> bounds = {Point(149,120), Point(439,112), Point(445,348), Point(159,361)};
+//  vector<Point> bounds = {Point(149,120), Point(439,112), Point(445,348), Point(159,361)};
   vector<Mat> samples;
   de.getImages(samples);
   
   int i = 0;
   for(auto sample: samples){
+    //binary
     Mat binary;
     adaptiveThreshold(sample, binary, 255, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY_INV, 25, 15);
+    
+    //refit
+    DataExtractor::refitSample(sample, binary, binary);
     //may have to process data before writing
-    imwrite(savePrefix+to_string(i)+".jpg", binary);
+    imwrite(savePrefix+to_string(i)+".png", binary);
     i++;
   }
 }
 
 int main(int argc, const char * argv[]) {
-  testDataExtractor("data/multiply.jpg");
-//  runDataExtractor("data/multiply.jpg","/Users/Terna/Desktop/operators/multiply/");
+//  testDataExtractor("data/multiply.jpg");
+  runDataExtractor("data/divide.jpg","/Users/Terna/Desktop/operators/divide/");
 }

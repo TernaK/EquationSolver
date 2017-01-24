@@ -118,16 +118,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Equation Solver/DataExtractor.cpp"
-            timestampString = "506930047.822214"
+            timestampString = "506933165.994718"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
-            landmarkName = "DataExtractor::refitSample(const cv::Mat&amp; image, const cv::Mat binaryImage, cv::Mat&amp; refittedImage, int innerDim, int outerDim)"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "DataExtractor::refitSample(const cv::Mat&amp; image, const cv::Mat binaryImage, cv::Mat&amp; refittedImage, int innerDim, int outerDim, bool divideSymbol)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/DataExtractor.cpp"
+            timestampString = "506931788.699375"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "DataExtractor::refitSample(const cv::Mat&amp; image, const cv::Mat binaryImage, cv::Mat&amp; refittedImage, int innerDim, int outerDim, bool divideSymbol)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/DataExtractor.cpp"
+            timestampString = "506933165.994718"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
+            landmarkName = "DataExtractor::refitSample(const cv::Mat&amp; image, const cv::Mat binaryImage, cv::Mat&amp; refittedImage, int innerDim, int outerDim, bool divideSymbol)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/DataExtractor.cpp"
+            timestampString = "506933165.994718"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "DataExtractor::refitSample(const cv::Mat&amp; image, const cv::Mat binaryImage, cv::Mat&amp; refittedImage, int innerDim, int outerDim, bool divideSymbol)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -73,7 +73,7 @@ public:
    * image: the image to refit
    
    */
-  static void refitSample(const cv::Mat& image, const cv::Mat binaryImage, cv::Mat& refittedImage, int innerDim=INNER_DIM, int outerDim=OUTER_DIM);
+  static void refitSample(const cv::Mat& image, const cv::Mat binaryImage, cv::Mat& refittedImage, int innerDim=INNER_DIM, int outerDim=OUTER_DIM, bool divideSymbol=false);
 };
 
 

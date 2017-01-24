@@ -67,9 +67,9 @@ bool DataExtractor::getBounds(const cv::Mat& dataImage, std::vector<cv::Point>& 
   drawContours(x, approxContours, -1, Scalar(255,0,255));
   cvtColor(x, x, CV_GRAY2RGB);
   
-  namedWindow("extracted");
-  imshow("extracted", x);
-  waitKey();
+//  namedWindow("extracted");
+//  imshow("extracted", x);
+//  waitKey();
   
   
   getMostProbableVerticesFromContours(finalContours, bounds);
@@ -172,44 +172,37 @@ bool DataExtractor::writeToFoldersAndFiles(const std::vector<cv::Mat>& samples, 
   return true;
 }
 
-void DataExtractor::refitSample(const cv::Mat& image, const cv::Mat binaryImage, cv::Mat& refittedImage, int innerDim, int outerDim){
+void DataExtractor::refitSample(const cv::Mat& image, const cv::Mat binaryImage, cv::Mat& refittedImage, int innerDim, int outerDim, bool divideSymbol){
   
   //get roi
   //label binary
   //close
-  Mat closed;
-  Mat morphElement = getStructuringElement(MorphShapes::MORPH_ELLIPSE, Size(3,3));
-  morphologyEx(255-binaryImage, closed, MorphTypes::MORPH_CLOSE, morphElement);
+//  Mat closed;
+//  Mat morphElement = getStructuringElement(MorphShapes::MORPH_ELLIPSE, Size(3,3));
+//  morphologyEx(binaryImage, closed, MorphTypes::MORPH_CLOSE, morphElement);
+  
+//  imshow("im", closed);
+//  waitKey();
   
   //get connected components
   Mat labels, stats, centroids;
-  int numObjects = connectedComponentsWithStats(closed, labels, stats, centroids);
+  connectedComponentsWithStats(binaryImage, labels, stats, centroids);
   
   //largest area (background)
-  int max1 = 0, max2 = 0;
-  int maxIdx1 = 0, maxIdx2 = 0;
-  for(int i = 0; i < stats.rows; i++){
-    int area = stats.at<int>(Point(0,i));
-    if(area > max1){
-      max1 = area;
-      maxIdx1 = i;
+  int max = 0;
+  int maxIdx = 0;
+  for(int i = 1; i < stats.rows; i++){
+    int area = stats.at<int>(Point(CC_STAT_AREA,i));
+    if(area > max){
+      max = area;
+      maxIdx = i;
     }
   }
   
-  //second largest area (letter)
-  for(int i = 0; i < stats.rows; i++){
-    if(i == maxIdx1) continue;
-    int area = stats.at<int>(Point(0,i));
-    if(area > max2){
-      max2 = area;
-      maxIdx2 = i;
-    }
-  }
-  
-  Rect roi(stats.at<int>(Point(0,maxIdx2)),
-           stats.at<int>(Point(1,maxIdx2)),
-           stats.at<int>(Point(2,maxIdx2)),
-           stats.at<int>(Point(3,maxIdx2)) );
+  Rect roi(stats.at<int>(Point(0,maxIdx)),
+           stats.at<int>(Point(1,maxIdx)),
+           stats.at<int>(Point(2,maxIdx)),
+           stats.at<int>(Point(3,maxIdx)) );
   
   //find larger dimension
   float _width = roi.width;
@@ -232,6 +225,10 @@ void DataExtractor::refitSample(const cv::Mat& image, const cv::Mat binaryImage,
   
   //resize
   Mat inner = image(roi);
+  
+  
+//  imshow("test", inner);
+//  waitKey();
   resize(inner, inner, Size(width, height));
   
   Mat binary;
@@ -240,9 +237,5 @@ void DataExtractor::refitSample(const cv::Mat& image, const cv::Mat binaryImage,
   //place inside
   refittedImage = Mat::zeros(outerDim, outerDim, CV_8U);
   binary.copyTo(refittedImage(Rect(x,y,width,height)));
-  
-  
-  imshow("test", refittedImage);
-  waitKey();
   
 }
