@@ -28,7 +28,7 @@ with env.begin(write=True) as txn:
 
     for p in range(4):
         for i in range(N/4):
-            X = cv2.imread(path1+path2[p]+str(i)+'.jpg', cv2.IMREAD_GRAYSCALE)
+            X = cv2.imread(path1+path2[p]+str(i)+'.png', cv2.IMREAD_GRAYSCALE)
             datum = caffe.proto.caffe_pb2.Datum()
             datum.channels = 1
             datum.height = 28
