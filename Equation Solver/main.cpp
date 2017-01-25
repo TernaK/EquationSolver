@@ -8,6 +8,7 @@
 #include "CharacterDetector.hpp"
 #include "MathEngine.hpp"
 #include "DataExtractor.hpp"
+#include "MnistReader.hpp"
 using namespace std;
 using namespace cv;
 
@@ -93,7 +94,16 @@ void runDataExtractor(string fileName, string savePrefix){
   }
 }
 
+void testMnistReader(string dataFile, string labelFile){
+  vector<pair<Mat, int> > samples;
+  MnistReader mr;
+  mr.readData(dataFile, labelFile, samples);
+}
+
 int main(int argc, const char * argv[]) {
 //  testDataExtractor("data/multiply.jpg");
-  runDataExtractor("data/divide.jpg","/Users/Terna/Desktop/operators/divide/");
+//  runDataExtractor("data/divide.jpg","/Users/Terna/Desktop/operators/divide/");
+  
+  testMnistReader("/Users/Terna/Downloads/t10k-images-idx3-ubyte", "/Users/Terna/Downloads/t10k-images-idx3-ubyte");
+  
 }

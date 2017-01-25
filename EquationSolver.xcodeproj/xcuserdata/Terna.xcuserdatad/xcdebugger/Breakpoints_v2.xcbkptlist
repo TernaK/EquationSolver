@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Equation Solver/main.cpp"
-            timestampString = "505734009.021158"
+            timestampString = "507013524.090882"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "testMathEnginEvaluate()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Equation Solver/main.cpp"
-            timestampString = "506810622.730129"
+            timestampString = "507013524.090882"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "testDataExtractor(string fileName)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Equation Solver/main.cpp"
-            timestampString = "506833765.813816"
+            timestampString = "507013524.090882"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "testDataExtractor(string fileName)"
             landmarkType = "7">
          </BreakpointContent>
@@ -176,6 +176,55 @@
             startingLineNumber = "232"
             endingLineNumber = "232"
             landmarkName = "DataExtractor::refitSample(const cv::Mat&amp; image, const cv::Mat binaryImage, cv::Mat&amp; refittedImage, int innerDim, int outerDim, bool divideSymbol)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/main.cpp"
+            timestampString = "507013942.281607"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "testMnistReader(string dataFile, string labelFile)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            condition = "dataByte != 0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/MnistReader.cpp"
+            timestampString = "507014508.640971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "MnistReader::readData(std::string dataFile, std::string labelFile, std::vector&lt;std::pair&lt;cv::Mat,int&gt;&gt;&amp; samples)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/MnistReader.cpp"
+            timestampString = "507014508.640971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "MnistReader::readData(std::string dataFile, std::string labelFile, std::vector&lt;std::pair&lt;cv::Mat,int&gt;&gt;&amp; samples)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
