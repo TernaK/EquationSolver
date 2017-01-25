@@ -12,11 +12,11 @@ using namespace cv;
 
 bool MnistReader::readData(std::string dataFile, std::string labelFile, std::vector<std::pair<cv::Mat,int>>& samples){
   
-  ifstream dataStream(dataFile);
+  ifstream dataStream(dataFile, ifstream::binary);
   if(!dataStream.is_open())
     return false;
   
-  ifstream labelStream(labelFile);
+  ifstream labelStream(labelFile, ifstream::binary);
   if(!labelStream.is_open())
     return false;
   
@@ -59,18 +59,20 @@ bool MnistReader::readData(std::string dataFile, std::string labelFile, std::vec
     
     //data
     for(int j = 0; j < N*N; j++){
-      dataStream >> dataByte;
+//      dataStream >> dataByte;
+      dataStream.read((char*)&dataByte,sizeof(dataByte));
       data[j] = dataByte;
     }
-    sample.first = Mat(N,N,CV_8U,data);
+    sample.first = Mat(N,N,CV_8U,data).clone();
     
     //label
-    labelStream >> dataByte;
+//    labelStream >> dataByte;
+    labelStream.read((char*)&dataByte,sizeof(dataByte));
     sample.second = dataByte;
     
-    imshow("data", sample.first);
-    waitKey(30);
-    
+//    imshow("data", sample.first);
+//    waitKey();
+  
     samples.push_back(sample);
   }
     

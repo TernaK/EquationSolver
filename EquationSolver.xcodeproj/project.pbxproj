@@ -10,7 +10,7 @@
 		510380D21E31D12900E2BD13 /* DataExtractor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 510380D01E31D12900E2BD13 /* DataExtractor.cpp */; };
 		511BF6EF1E354FCF000CC1EB /* data in CopyFiles */ = {isa = PBXBuildFile; fileRef = 511BF6EE1E354F8C000CC1EB /* data */; };
 		5155CA2E1E3861D5004C0C35 /* MnistReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5155CA2C1E3861D5004C0C35 /* MnistReader.cpp */; };
-		51E8D98E1E22258800E777C5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51E8D98D1E22258800E777C5 /* main.cpp */; };
+		5164759C1E3944B200ED9455 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51E8D98D1E22258800E777C5 /* main.cpp */; };
 		51E8D9961E22CB0C00E777C5 /* Ocr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51E8D9941E22CB0C00E777C5 /* Ocr.cpp */; };
 		51E8D9991E23273600E777C5 /* CharacterDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51E8D9971E23273600E777C5 /* CharacterDetector.cpp */; };
 		51E8D99D1E23286A00E777C5 /* ModelLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51E8D99B1E23286900E777C5 /* ModelLoader.cpp */; };
@@ -168,8 +168,8 @@
 				51E8D9A41E24D31300E777C5 /* MathEngine.cpp in Sources */,
 				510380D21E31D12900E2BD13 /* DataExtractor.cpp in Sources */,
 				51E8D9961E22CB0C00E777C5 /* Ocr.cpp in Sources */,
+				5164759C1E3944B200ED9455 /* main.cpp in Sources */,
 				5155CA2E1E3861D5004C0C35 /* MnistReader.cpp in Sources */,
-				51E8D98E1E22258800E777C5 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

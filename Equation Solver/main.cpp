@@ -100,10 +100,47 @@ void testMnistReader(string dataFile, string labelFile){
   mr.readData(dataFile, labelFile, samples);
 }
 
+void runMnistReader(string dataFile, string labelFile, string topFolder){
+  vector<pair<Mat, int> > samples;
+  MnistReader mr;
+  mr.readData(dataFile, labelFile, samples);
+  
+  /*
+  //create top folder
+  string systemCall = "mkdir " + topFolder;
+  if(!system(systemCall.c_str())){
+    exit(-1);
+  }
+  
+  //create sub folders
+  for(int i = 0; i < 10; i++){
+    systemCall = "mkdir " + topFolder + "/" + to_string(i);
+    if(!system(systemCall.c_str())){
+      exit(-1);
+    }
+  }
+   */
+  
+  //hold counts of each label
+  vector<int> counts = vector<int>(10, 0);
+  
+  for(auto sample: samples) {
+    if(counts[sample.second] > 500) continue;
+    
+    string fileName = topFolder + "/" + to_string(sample.second) + "/" + to_string(counts[sample.second]) + ".png";
+    imwrite(fileName, sample.first);
+    
+    counts[sample.second]++;
+  }
+  
+  cout << "complete!" << endl;
+}
+
 int main(int argc, const char * argv[]) {
 //  testDataExtractor("data/multiply.jpg");
 //  runDataExtractor("data/divide.jpg","/Users/Terna/Desktop/operators/divide/");
   
-  testMnistReader("/Users/Terna/Downloads/t10k-images-idx3-ubyte", "/Users/Terna/Downloads/t10k-images-idx3-ubyte");
+//  testMnistReader("/Users/Terna/Downloads/train-images-idx3-ubyte", "/Users/Terna/Downloads/train-labels-idx1-ubyte");
+  runMnistReader("/Users/Terna/Downloads/train-images-idx3-ubyte", "/Users/Terna/Downloads/train-labels-idx1-ubyte", "/Users/Terna/Desktop/mnistdata");
   
 }

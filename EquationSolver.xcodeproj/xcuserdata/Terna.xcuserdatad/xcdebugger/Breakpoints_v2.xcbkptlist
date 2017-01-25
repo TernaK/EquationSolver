@@ -16,7 +16,7 @@
             startingLineNumber = "23"
             endingLineNumber = "23"
             landmarkName = "testMathEnginEvaluate()"
-            landmarkType = "7">
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -48,7 +48,7 @@
             startingLineNumber = "50"
             endingLineNumber = "50"
             landmarkName = "testDataExtractor(string fileName)"
-            landmarkType = "7">
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -64,7 +64,7 @@
             startingLineNumber = "53"
             endingLineNumber = "53"
             landmarkName = "testDataExtractor(string fileName)"
-            landmarkType = "7">
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -192,6 +192,23 @@
             startingLineNumber = "99"
             endingLineNumber = "99"
             landmarkName = "testMnistReader(string dataFile, string labelFile)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            condition = "dataByte &gt; 9"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/MnistReader.cpp"
+            timestampString = "507069757.100575"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "MnistReader::readData(std::string dataFile, std::string labelFile, std::vector&lt;std::pair&lt;cv::Mat,int&gt;&gt;&amp; samples)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -200,16 +217,15 @@
          <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
-            condition = "dataByte != 0"
             continueAfterRunningActions = "No"
             filePath = "Equation Solver/MnistReader.cpp"
-            timestampString = "507014508.640971"
+            timestampString = "507014905.499712"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "MnistReader::readData(std::string dataFile, std::string labelFile, std::vector&lt;std::pair&lt;cv::Mat,int&gt;&gt;&amp; samples)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -219,13 +235,109 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Equation Solver/MnistReader.cpp"
-            timestampString = "507014508.640971"
+            timestampString = "507069757.100575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "MnistReader::readData(std::string dataFile, std::string labelFile, std::vector&lt;std::pair&lt;cv::Mat,int&gt;&gt;&amp; samples)"
-            landmarkType = "5">
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/mnist.cpp"
+            timestampString = "507069373.37929"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "ReadMNIST(int NumberOfImages, int DataOfAnImage,vector&lt;vector&lt;double&gt; &gt; &amp;arr)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/MnistReader.cpp"
+            timestampString = "507070279.510678"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "MnistReader::readData(std::string dataFile, std::string labelFile, std::vector&lt;std::pair&lt;cv::Mat,int&gt;&gt;&amp; samples)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/main.cpp"
+            timestampString = "507070776.061733"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "runMnistReader(string dataFile, string labelFile, string topFolder)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/main.cpp"
+            timestampString = "507070776.061733"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "runMnistReader(string dataFile, string labelFile, string topFolder)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/main.cpp"
+            timestampString = "507070776.061733"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "runMnistReader(string dataFile, string labelFile, string topFolder)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/main.cpp"
+            timestampString = "507070776.061733"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "runMnistReader(string dataFile, string labelFile, string topFolder)"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
