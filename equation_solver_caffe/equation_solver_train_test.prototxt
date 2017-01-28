@@ -12,7 +12,7 @@ layer {
   }
   data_param {
     source: "equation_solver_lmdb"
-    batch_size: 64
+    batch_size: 52
     backend: LMDB
   }
 }
@@ -29,7 +29,7 @@ layer {
   }
   data_param {
     source: "train/equation_solver_lmdb"
-    batch_size: 100
+    batch_size: 26
     backend: LMDB
   }
 }
