@@ -28,7 +28,7 @@ def readImageWriteLmdb(readPath, index):
 
 N = 13*13*14
 
-map_size = N*10 
+map_size = N*10*28*28
 
 env = lmdb.open('equation_solver_lmdb', map_size=map_size)
 
