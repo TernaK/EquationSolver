@@ -11,7 +11,7 @@ import caffe
 # setting this too big. If you still run into problem after raising
 # this, you might want to try saving fewer entries in a single
 # transaction.
-def readImageWriteLmdb(readPath, index):
+def readImageWriteLmdb(readPath, label, index):
     with env.begin(write=True) as txn:
         #print(readPath)
         X = cv2.imread(readPath, cv2.IMREAD_GRAYSCALE)
@@ -20,7 +20,7 @@ def readImageWriteLmdb(readPath, index):
         datum.height = 28
         datum.width = 28
         datum.data = X.tostring()  # or .tostring() if numpy < 1.9
-        datum.label = labels[p]
+        datum.label = label
         str_id = '{:08}'.format(index)
         index = index + 1
         txn.put(str_id.encode('ascii'), datum.SerializeToString())
@@ -41,12 +41,12 @@ labels = [10,11,12,13]
 
 for p in range(4):
     for i in range(N/14):
-        readImageWriteLmdb(path1+path2[p]+str(i)+'.png', index)
+        readImageWriteLmdb(path1+path2[p]+str(i)+'.png', p, index)
         index += 1
         
 #get operands
 path1 = 'operands/'
 for p in range(10):
     for i in range(N/14):
-        readImageWriteLmdb(path1+str(p)+'/'+str(i)+'.png', index)
+        readImageWriteLmdb(path1+str(p)+'/'+str(i)+'.png', p, index)
         index += 1
