@@ -120,7 +120,7 @@ void Ocr::getMaxClass(dnn::Blob &probBlob, int *classId, double *classProb)
 {
   Mat probMat = probBlob.matRefConst().reshape(1, 1); //reshape the blob to 1x1000 matrix
   Point classNumber;
-  std::cout << probMat << endl;
+  //std::cout << probMat << endl;
   minMaxLoc(probMat, NULL, classProb, NULL, &classNumber);
   *classId = classNumber.x;
 }
@@ -129,6 +129,7 @@ void Ocr::loadDictionary(){
   char c = '0';
   for(int i = 0; i < 10; i++){
     dictionary[i] = c;
+    c++;
   }
   dictionary[10] = '+';
   dictionary[11] = '-';

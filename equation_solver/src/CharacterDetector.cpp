@@ -12,7 +12,7 @@ using namespace std;
 
 
 CharactedDetector::CharactedDetector(std::string protoFile, std::string modelFile){
-  Ocr ocr = Ocr(protoFile, modelFile);
+  ocr = Ocr(protoFile, modelFile);
 }
 
 
