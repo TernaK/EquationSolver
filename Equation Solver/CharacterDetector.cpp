@@ -11,7 +11,8 @@ using namespace cv;
 using namespace std;
 
 
-CharactedDetector::CharactedDetector(std::string modelFile){
+CharactedDetector::CharactedDetector(std::string protoFile, std::string modelFile){
+  Ocr ocr = Ocr(protoFile, modelFile);
 }
 
 
@@ -19,19 +20,20 @@ void CharactedDetector::detectCharacters(const cv::Mat& image, std::vector<char>
   Mat equationImage;
   bool equationFound = getEquationImage(image, equationImage);
   
+  vector<Rect> charRois;
   if(equationFound){
     //get character rois
-    vector<Rect> charRois;
     getCharRois(equationImage, charRois);
   }
   else {
     cout << "Could not find equation" << endl;
   }
   
-//  //for each roi, get the character
-//  for(auto charRoi: charRois){
-//    characters.push_back(ocr.detectLetter(image(charRoi)));
-//  }
+  //for each roi, get the character
+  for(auto charRoi: charRois){
+//    imshow("img", equationImage(charRoi)); waitKey();
+    characters.push_back(ocr.detectLetter(equationImage(charRoi)));
+  }
 }
 
 bool CharactedDetector::getEquationImage(const cv::Mat& image, Mat& equationImage){
@@ -67,7 +69,7 @@ bool CharactedDetector::getEquationImage(const cv::Mat& image, Mat& equationImag
   getMostProbableRectFromContours(approxContours, eqRect);
   
   if(eqRect.width > 0){
-    equationImage = grayImage(eqRect).clone();
+    equationImage = image(eqRect).clone();
     return true;
   }
   
@@ -109,14 +111,15 @@ void CharactedDetector::getCharRois(cv::Mat& image, std::vector<cv::Rect>& rois)
   //resize
   resize(image, image, Size(width, height));
   //binarize
-  adaptiveThreshold(image, image, 255, ADAPTIVE_THRESH_GAUSSIAN_C, THRESH_BINARY_INV, 21, 5);
+  Mat binary;
+  adaptiveThreshold(image, binary, 255, ADAPTIVE_THRESH_GAUSSIAN_C, THRESH_BINARY_INV, 21, 5);
   //close
   Mat morphElement = getStructuringElement(MorphShapes::MORPH_ELLIPSE, Size(3,3));
-  morphologyEx(image, image, MorphTypes::MORPH_CLOSE, morphElement);
+  morphologyEx(binary, binary, MorphTypes::MORPH_CLOSE, morphElement);
 
   //get connected components
   Mat labels, stats, centroids;
-  int numObjects = connectedComponentsWithStats(image, labels, stats, centroids);
+  int numObjects = connectedComponentsWithStats(binary, labels, stats, centroids);
   
   //need at least two operands & one operation
   if(numObjects < 3)
@@ -139,13 +142,13 @@ void CharactedDetector::getCharRois(cv::Mat& image, std::vector<cv::Rect>& rois)
                stats.at<int>(Point(2,i)),
                stats.at<int>(Point(3,i)) );
       rois.push_back(roi);
-      rectangle(image, roi, Scalar(150));
+      rectangle(binary, roi, Scalar(150));
     }
   }
   
   sort(rois.begin(), rois.end(), compareRectXPos);
   
   namedWindow("equation");
-  imshow("equation", image);
+  imshow("equation", binary);
   waitKey();
 }

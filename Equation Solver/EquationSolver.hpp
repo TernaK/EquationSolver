@@ -15,4 +15,9 @@
 #include <fstream>
 #include <vector>
 
+#define MAP_SQUARE_SIZE 28
+#define INNER_DIM 20
+#define OUTER_DIM 28
+
+
 #endif /* EquationSolver_hpp */

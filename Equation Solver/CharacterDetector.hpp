@@ -38,7 +38,7 @@ private:
   void getMostProbableRectFromContours(const std::vector<std::vector<cv::Point>> contours, cv::Rect& roi);
   
 public:
-  CharactedDetector(std::string modelFile);
+  CharactedDetector(std::string protoFile, std::string modelFile);
   
   /* Detect characters in an image
    * image: the image containing the characters

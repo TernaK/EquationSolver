@@ -10,11 +10,6 @@
 #define DataExtractor_hpp
 
 #include "EquationSolver.hpp"
-
-#define MAP_SQUARE_SIZE 28
-#define INNER_DIM 20
-#define OUTER_DIM 28
-
 /* This class may be used to quickly extract training data from a grid arrangement
  * on paper.
  */

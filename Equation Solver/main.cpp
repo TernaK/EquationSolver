@@ -9,6 +9,7 @@
 #include "MathEngine.hpp"
 #include "DataExtractor.hpp"
 #include "MnistReader.hpp"
+#include "Ocr.hpp"
 using namespace std;
 using namespace cv;
 
@@ -39,7 +40,7 @@ void testMathEnginEvaluate(){
 void testCharactedDetector(){
   Mat image = imread("data/test1.png", IMREAD_GRAYSCALE);
   
-  CharactedDetector detector("dummy");
+  CharactedDetector detector("dummy", "dummy");
   vector<char> chars;
   detector.detectCharacters(image, chars);
 }
@@ -128,7 +129,7 @@ void runMnistReader(string dataFile, string labelFile, string topFolder){
     if(counts[sample.second] > 500) continue;
     
     string fileName = topFolder + "/" + to_string(sample.second) + "/" + to_string(counts[sample.second]) + ".png";
-    imwrite(fileName, sample.first);
+    //imwrite(fileName, sample.first);
     
     counts[sample.second]++;
   }
@@ -136,11 +137,33 @@ void runMnistReader(string dataFile, string labelFile, string topFolder){
   cout << "complete!" << endl;
 }
 
+void testSystem(){
+  string protoFile = "/Users/Terna/Desktop/EquationSolver/equation_solver_caffe/equation_solver.prototxt";
+  string modelFile = "/Users/Terna/Desktop/EquationSolver/equation_solver_caffe/snapshot_iter_5000.caffemodel";
+  
+  Mat image = imread("data/test1.png", IMREAD_GRAYSCALE);
+  
+  CharactedDetector cd(protoFile, modelFile);
+  vector<char> characters;
+  cd.detectCharacters(image, characters);
+  for(auto c: characters)
+    cout << c;
+  cout << endl;
+}
+
+void testOcr(){
+  Ocr ocr = Ocr("/Users/Terna/Desktop/EquationSolver/equation_solver_caffe/equation_solver.prototxt", "/Users/Terna/Desktop/EquationSolver/equation_solver_caffe/snapshot_iter_5000.caffemodel");
+  Mat image = imread("/Users/Terna/Desktop/operators/multiply/4.png", IMREAD_GRAYSCALE);
+  ocr.detectLetter(image, false);
+}
+
 int main(int argc, const char * argv[]) {
 //  testDataExtractor("data/multiply.jpg");
 //  runDataExtractor("data/divide.jpg","/Users/Terna/Desktop/operators/divide/");
   
 //  testMnistReader("/Users/Terna/Downloads/train-images-idx3-ubyte", "/Users/Terna/Downloads/train-labels-idx1-ubyte");
-  runMnistReader("/Users/Terna/Downloads/train-images-idx3-ubyte", "/Users/Terna/Downloads/train-labels-idx1-ubyte", "/Users/Terna/Desktop/mnistdata");
+  //runMnistReader("/Users/Terna/Downloads/train-images-idx3-ubyte", "/Users/Terna/Downloads/train-labels-idx1-ubyte", "/Users/Terna/Desktop/mnistdata");
   
+//  testOcr();
+  testSystem();
 }

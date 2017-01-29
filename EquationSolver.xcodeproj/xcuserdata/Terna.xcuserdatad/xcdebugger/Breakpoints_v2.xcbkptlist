@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Equation Solver/main.cpp"
-            timestampString = "507013524.090882"
+            timestampString = "507361161.465062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "testMathEnginEvaluate()"
             landmarkType = "9">
          </BreakpointContent>
@@ -32,7 +32,7 @@
             startingLineNumber = "57"
             endingLineNumber = "57"
             landmarkName = "DataExtractor::getBounds(const cv::Mat&amp; dataImage, std::vector&lt;cv::Point&gt;&amp; bounds)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Equation Solver/main.cpp"
-            timestampString = "507013524.090882"
+            timestampString = "507361161.465062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "testDataExtractor(string fileName)"
             landmarkType = "9">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Equation Solver/main.cpp"
-            timestampString = "507013524.090882"
+            timestampString = "507361161.465062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "testDataExtractor(string fileName)"
             landmarkType = "9">
          </BreakpointContent>
@@ -80,7 +80,7 @@
             startingLineNumber = "23"
             endingLineNumber = "23"
             landmarkName = "DataExtractor::DataExtractor(const cv::Mat&amp; image, std::string outputFileName, int rows, int cols, int border)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -96,7 +96,7 @@
             startingLineNumber = "65"
             endingLineNumber = "65"
             landmarkName = "DataExtractor::getBounds(const cv::Mat&amp; dataImage, std::vector&lt;cv::Point&gt;&amp; bounds)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -112,7 +112,7 @@
             startingLineNumber = "90"
             endingLineNumber = "90"
             landmarkName = "DataExtractor::getMostProbableVerticesFromContours(const std::vector&lt;std::vector&lt;cv::Point&gt; &gt; contours, std::vector&lt;cv::Point&gt;&amp; vertices)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -128,7 +128,7 @@
             startingLineNumber = "239"
             endingLineNumber = "239"
             landmarkName = "DataExtractor::refitSample(const cv::Mat&amp; image, const cv::Mat binaryImage, cv::Mat&amp; refittedImage, int innerDim, int outerDim, bool divideSymbol)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -144,7 +144,7 @@
             startingLineNumber = "202"
             endingLineNumber = "202"
             landmarkName = "DataExtractor::refitSample(const cv::Mat&amp; image, const cv::Mat binaryImage, cv::Mat&amp; refittedImage, int innerDim, int outerDim, bool divideSymbol)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -160,7 +160,7 @@
             startingLineNumber = "208"
             endingLineNumber = "208"
             landmarkName = "DataExtractor::refitSample(const cv::Mat&amp; image, const cv::Mat binaryImage, cv::Mat&amp; refittedImage, int innerDim, int outerDim, bool divideSymbol)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -176,7 +176,7 @@
             startingLineNumber = "232"
             endingLineNumber = "232"
             landmarkName = "DataExtractor::refitSample(const cv::Mat&amp; image, const cv::Mat binaryImage, cv::Mat&amp; refittedImage, int innerDim, int outerDim, bool divideSymbol)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Equation Solver/main.cpp"
-            timestampString = "507013942.281607"
+            timestampString = "507361161.465062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "testMnistReader(string dataFile, string labelFile)"
             landmarkType = "9">
          </BreakpointContent>
@@ -283,11 +283,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Equation Solver/main.cpp"
-            timestampString = "507070776.061733"
+            timestampString = "507361161.465062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "runMnistReader(string dataFile, string labelFile, string topFolder)"
             landmarkType = "9">
          </BreakpointContent>
@@ -299,11 +299,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Equation Solver/main.cpp"
-            timestampString = "507070776.061733"
+            timestampString = "507361161.465062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "runMnistReader(string dataFile, string labelFile, string topFolder)"
             landmarkType = "9">
          </BreakpointContent>
@@ -315,29 +315,171 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Equation Solver/main.cpp"
-            timestampString = "507070776.061733"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "runMnistReader(string dataFile, string labelFile, string topFolder)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Equation Solver/main.cpp"
-            timestampString = "507070776.061733"
+            timestampString = "507361161.465062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "119"
             endingLineNumber = "119"
             landmarkName = "runMnistReader(string dataFile, string labelFile, string topFolder)"
             landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/main.cpp"
+            timestampString = "507361161.465062"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "runMnistReader(string dataFile, string labelFile, string topFolder)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/Ocr.cpp"
+            timestampString = "507363883.356839"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "Ocr::detectLetter(const cv::Mat&amp; image, bool preprocess)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/main.cpp"
+            timestampString = "507361946.291242"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "testSystem()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/Ocr.cpp"
+            timestampString = "507363883.356839"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "Ocr::detectLetter(const cv::Mat&amp; image, bool preprocess)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/Ocr.hpp"
+            timestampString = "507362745.69014"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "9"
+            endingLineNumber = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ocr::~Ocr()"
+                  moduleName = "EquationSolver"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Terna/Desktop/EquationSolver/Equation%20Solver/Ocr.hpp"
+                  timestampString = "507363363.180812"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ocr::~Ocr()"
+                  moduleName = "EquationSolver"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Terna/Desktop/EquationSolver/Equation%20Solver/Ocr.hpp"
+                  timestampString = "507363363.182682"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/main.cpp"
+            timestampString = "507363359.93761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "testSystem()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/Ocr.cpp"
+            timestampString = "507363446.70255"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "Ocr::preprocessImage(const cv::Mat&amp; letterImage)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/CharacterDetector.cpp"
+            timestampString = "507364610.494062"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "CharactedDetector::getEquationImage(const cv::Mat&amp; image, Mat&amp; equationImage)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
