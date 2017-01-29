@@ -153,8 +153,9 @@ void testSystem(){
   CharactedDetector cd(protoFile, modelFile);
   vector<char> characters;
   cd.detectCharacters(image, characters);
+  cout << characters.size() << " characters found " << endl;
   for(auto c: characters)
-    cout << c;
+    cout << c << " "; 
   cout << endl;
 }
 

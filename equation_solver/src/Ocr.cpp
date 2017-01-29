@@ -71,15 +71,16 @@ cv::Mat Ocr::preprocessImage(const cv::Mat& letterImage){
   //get the offsets
   int x = (OUTER_DIM-width)/2;
   int y = (OUTER_DIM-height)/2;
-  
-  //copy to roi
-  Mat outer = Mat::zeros(OUTER_DIM, OUTER_DIM, CV_8U);
-  inner.copyTo(outer(Rect(x,y,width,height)));
-  
+ 
+  //binarize 
   Mat binary;
-  adaptiveThreshold(outer, binary, 255, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY_INV, 17, 10);
+  adaptiveThreshold(inner, binary, 255, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY_INV, 17, 10);
   
-  return binary;
+  //copy 
+  Mat outer = Mat::zeros(OUTER_DIM, OUTER_DIM, CV_8U);
+  binary.copyTo(outer(Rect(x,y,width,height)));
+    
+  return outer;
 }
 
 char Ocr::detectLetter(const cv::Mat& image, bool preprocess){

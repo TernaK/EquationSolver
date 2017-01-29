@@ -44,7 +44,7 @@ public:
    * image: the image containing the characters
    * characters:output the characters detected in the image
    */
-  void detectCharacters(const cv::Mat& image, std::vector<char> characters);
+  void detectCharacters(const cv::Mat& image, std::vector<char>& characters);
 };
 
 #endif /* CharacterDetector_hpp */

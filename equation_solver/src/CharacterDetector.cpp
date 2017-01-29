@@ -16,7 +16,7 @@ CharactedDetector::CharactedDetector(std::string protoFile, std::string modelFil
 }
 
 
-void CharactedDetector::detectCharacters(const cv::Mat& image, std::vector<char> characters){
+void CharactedDetector::detectCharacters(const cv::Mat& image, std::vector<char>& characters){
   Mat equationImage;
   bool equationFound = getEquationImage(image, equationImage);
   
