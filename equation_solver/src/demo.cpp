@@ -66,9 +66,9 @@ void testDataExtractor(string fileName){
 //    adaptiveThreshold(sample, binary, 255, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY_INV, 25, 15);
     
     
-    namedWindow("extracted");
-    imshow("extracted", binary) ;
-    waitKey();
+    //namedWindow("extracted");
+    //imshow("extracted", binary) ;
+    //waitKey();
   }
 }
 
@@ -139,14 +139,14 @@ void runMnistReader(string dataFile, string labelFile, string topFolder){
 
 
 void testOcr(){
-  Ocr ocr = Ocr("/Users/Terna/Desktop/EquationSolver/equation_solver_caffe/equation_solver.prototxt", "/Users/Terna/Desktop/EquationSolver/equation_solver_caffe/snapshot_iter_5000.caffemodel");
+  Ocr ocr = Ocr("caffe-model/equation_solver.prototxt", "caffe-model/snapshot_iter_5000.caffemodel");
   Mat image = imread("/Users/Terna/Desktop/operators/multiply/4.png", IMREAD_GRAYSCALE);
   ocr.detectLetter(image, false);
 }
 
 void testSystem(){
-  string protoFile = "/Users/Terna/Desktop/EquationSolver/equation_solver_caffe/equation_solver.prototxt";
-  string modelFile = "/Users/Terna/Desktop/EquationSolver/equation_solver_caffe/snapshot_iter_5000.caffemodel";
+  string protoFile = "caffe-model/equation_solver.prototxt";
+  string modelFile = "caffe-model/snapshot_iter_5000.caffemodel";
   
   Mat image = imread("data/test1.png", IMREAD_GRAYSCALE);
   
