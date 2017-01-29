@@ -41,7 +41,7 @@ labels = [10,11,12,13]
 
 for p in range(4):
     for i in range(N/14):
-        readImageWriteLmdb(path1+path2[p]+str(i)+'.png', p, index)
+        readImageWriteLmdb(path1+path2[p]+str(i)+'.png', labels[p], index)
         index += 1
         
 #get operands
