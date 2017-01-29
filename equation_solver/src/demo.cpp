@@ -148,7 +148,7 @@ void testSystem(){
   string protoFile = "/home/pi/EquationSolver/equation_solver/src/caffe-model/equation_solver.prototxt";
   string modelFile = "/home/pi/EquationSolver/equation_solver/src/caffe-model/snapshot_iter_5000.caffemodel";
   
-  Mat image = imread("/home/pi/EquationSolver/equation_solver/src/data/test1.png", IMREAD_GRAYSCALE);
+  Mat image = imread("/home/pi/EquationSolver/equation_solver/src/data/test3.png", IMREAD_GRAYSCALE);
   
   CharactedDetector cd(protoFile, modelFile);
   vector<char> characters;
