@@ -10,19 +10,18 @@
 #define Ocr_hpp
 
 #include "EquationSolver.hpp"
-#include "Model.hpp"
-#include "ModelLoader.hpp"
+#include <opencv2/dnn.hpp>
 
 class Ocr {
 private:
-  std::vector<char> dictionary;
-  Model model;
-  void loadModel(std::string modelFile);
+  void getMaxClass(cv::dnn::Blob &probBlob, int *classId, double *classProb);
   cv::Mat preprocessImage(const cv::Mat& letterImage);
   char predictLetter(const cv::Mat& preprocessed);
+  cv::dnn::Net net;
   
 public:
-  Ocr(std::string modelFile);
+  Ocr(){};
+  Ocr(std::string protoFile, std::string modelFile);
   char detectLetter(const cv::Mat& image);
 };
 

@@ -11,8 +11,7 @@ using namespace cv;
 using namespace std;
 
 
-CharactedDetector::CharactedDetector(std::string modelFile)
-: ocr(modelFile) {
+CharactedDetector::CharactedDetector(std::string modelFile){
 }
 
 
