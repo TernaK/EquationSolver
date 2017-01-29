@@ -38,7 +38,7 @@ void testMathEnginEvaluate(){
 }
 
 void testCharactedDetector(){
-  Mat image = imread("data/test1.png", IMREAD_GRAYSCALE);
+  Mat image = imread("data/test3.png", IMREAD_GRAYSCALE);
   
   CharactedDetector detector("dummy", "dummy");
   vector<char> chars;
