@@ -9,22 +9,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Equation Solver/main.cpp"
-            timestampString = "507361161.465062"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "testMathEnginEvaluate()"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Equation Solver/DataExtractor.cpp"
             timestampString = "506743281.885208"
             startingColumnNumber = "9223372036854775807"
@@ -347,11 +331,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Equation Solver/Ocr.cpp"
-            timestampString = "507363883.356839"
+            timestampString = "507370135.472662"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "Ocr::detectLetter(const cv::Mat&amp; image, bool preprocess)"
             landmarkType = "7">
          </BreakpointContent>
@@ -363,11 +347,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Equation Solver/Ocr.cpp"
-            timestampString = "507363883.356839"
+            timestampString = "507370135.472662"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "Ocr::detectLetter(const cv::Mat&amp; image, bool preprocess)"
             landmarkType = "7">
          </BreakpointContent>
@@ -448,6 +432,70 @@
             endingLineNumber = "72"
             landmarkName = "CharactedDetector::getEquationImage(const cv::Mat&amp; image, Mat&amp; equationImage)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/main.cpp"
+            timestampString = "507369722.93135"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "testSystem()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equation Solver/main.cpp"
+            timestampString = "507369725.37951"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "testSystem()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "testSystem()"
+                  moduleName = "EquationSolver"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Terna/Desktop/EquationSolver/Equation%20Solver/main.cpp"
+                  timestampString = "507370489.933418"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "156"
+                  endingLineNumber = "156"
+                  offsetFromSymbolStart = "800">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "testSystem()"
+                  moduleName = "EquationSolver"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Terna/Desktop/EquationSolver/Equation%20Solver/main.cpp"
+                  timestampString = "507370489.93569"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "156"
+                  endingLineNumber = "156"
+                  offsetFromSymbolStart = "1137">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
