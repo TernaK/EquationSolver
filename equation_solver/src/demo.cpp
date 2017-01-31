@@ -38,7 +38,7 @@ void testMathEnginEvaluate(){
 }
 
 void testCharactedDetector(){
-  Mat image = imread("data/test3.png", IMREAD_GRAYSCALE);
+  Mat image = imread("data/test4.jpg", IMREAD_GRAYSCALE);
   
   CharactedDetector detector("dummy", "dummy");
   vector<char> chars;
@@ -148,7 +148,7 @@ void testSystem(){
 #ifdef __MACH__
   string protoFile = "/Users/Terna/Desktop/EquationSolver/equation_solver/src/caffe-model/equation_solver.prototxt";
   string modelFile = "/Users/Terna/Desktop/EquationSolver/equation_solver/src/caffe-model/snapshot_iter_5000.caffemodel";
-#elif
+#else
   string protoFile = "/home/pi/EquationSolver/equation_solver/src/caffe-model/equation_solver.prototxt";
   string modelFile = "/home/pi/EquationSolver/equation_solver/src/caffe-model/snapshot_iter_5000.caffemodel";
 #endif
