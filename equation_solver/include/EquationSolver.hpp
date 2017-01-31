@@ -15,9 +15,8 @@
 #include <fstream>
 #include <vector>
 
-#define MAP_SQUARE_SIZE 28
-#define INNER_DIM 20
-#define OUTER_DIM 28
-
+#define MAP_SQUARE_SIZE 28 //the size to which to map samples
+#define INNER_DIM 20 //the size used for normalization of samples: see mnist dataset website
+#define OUTER_DIM 28 //the size of samples in mnist
 
 #endif /* EquationSolver_hpp */

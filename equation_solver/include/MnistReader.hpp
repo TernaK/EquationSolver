@@ -14,6 +14,12 @@
 class MnistReader {
 public:
   MnistReader(){};
+
+  /* take a data file, a label file, then read all images
+   * dataFile: the path to the data file
+   * labelFile: the path to the label file
+   * samples:output vector of label,image Mat pairs read from the provided files
+   */
   bool readData(std::string dataFile, std::string labelFile, std::vector<std::pair<cv::Mat,int>>& samples);
 };
 

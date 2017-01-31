@@ -70,8 +70,10 @@ public:
   //evaluate a math expression from a string
   float evaluate(std::string equationString);
 
+  //get the the infix expression as a string
   std::string getInfixString(){ return infixExpressionString; };
   
+  //get the string verion of the parsed expression
   std::string getParsedString(){ return  parsedExpressionString; };
 };
 
