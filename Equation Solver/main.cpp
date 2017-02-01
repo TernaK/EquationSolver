@@ -148,7 +148,7 @@ void testSystem(){
   string protoFile = "/Users/Terna/Desktop/EquationSolver/equation_solver_caffe/equation_solver.prototxt";
   string modelFile = "/Users/Terna/Desktop/EquationSolver/equation_solver_caffe/snapshot_iter_5000.caffemodel";
   
-  Mat image = imread("data/test1.png", IMREAD_GRAYSCALE);
+  Mat image = imread("data/test4.jpg", IMREAD_GRAYSCALE);
   
   CharactedDetector cd(protoFile, modelFile);
   vector<char> characters;

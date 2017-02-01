@@ -116,7 +116,7 @@ void CharactedDetector::getCharRois(cv::Mat& image, std::vector<cv::Rect>& rois)
   //close
   Mat morphElement = getStructuringElement(MorphShapes::MORPH_ELLIPSE, Size(3,3));
   morphologyEx(binary, binary, MorphTypes::MORPH_CLOSE, morphElement);
-
+  
   //get connected components
   Mat labels, stats, centroids;
   int numObjects = connectedComponentsWithStats(binary, labels, stats, centroids);
@@ -126,7 +126,7 @@ void CharactedDetector::getCharRois(cv::Mat& image, std::vector<cv::Rect>& rois)
     return;
   
   //get components stats (area)
-  Mat areaMat = stats.col(4);
+  Mat areaMat = stats.col(CC_STAT_AREA);
   double min, max;
   Point minLoc, maxLoc;
   minMaxLoc(areaMat, &min, &max, &minLoc, &maxLoc);
@@ -135,12 +135,14 @@ void CharactedDetector::getCharRois(cv::Mat& image, std::vector<cv::Rect>& rois)
   float avgArea = (sum(areaMat)[0] - areaMat.at<int>(maxLoc)) / (areaMat.rows - 1);
   //half the average area is the threshold
   for(int i = 0; i < areaMat.rows; i++){
+    int midY = stats.at<int>(Point(CC_STAT_TOP,i)) + stats.at<int>(Point(CC_STAT_HEIGHT,i))/2;
+    bool isInMidThird = (midY > height/3) && (midY < (height*2)/3);
     //ignore the max area componnet, i.e. the background
-    if(i != maxLoc.y && areaMat.at<int>(Point(0,i)) > (avgArea/2) ){
-      Rect roi(stats.at<int>(Point(0,i)),
-               stats.at<int>(Point(1,i)),
-               stats.at<int>(Point(2,i)),
-               stats.at<int>(Point(3,i)) );
+    if(i != maxLoc.y && areaMat.at<int>(Point(0,i)) > (avgArea/2) && isInMidThird){
+      Rect roi(stats.at<int>(Point(CC_STAT_LEFT,i)),
+               stats.at<int>(Point(CC_STAT_TOP,i)),
+               stats.at<int>(Point(CC_STAT_WIDTH,i)),
+               stats.at<int>(Point(CC_STAT_HEIGHT,i)) );
       rois.push_back(roi);
       rectangle(binary, roi, Scalar(150));
     }
