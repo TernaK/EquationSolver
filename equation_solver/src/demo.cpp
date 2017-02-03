@@ -140,20 +140,21 @@ void runMnistReader(string dataFile, string labelFile, string topFolder){
 
 void testOcr(){
   Ocr ocr = Ocr("caffe-model/equation_solver.prototxt", "caffe-model/snapshot_iter_5000.caffemodel");
-  Mat image = imread("/Users/Terna/Desktop/operators/multiply/4.png", IMREAD_GRAYSCALE);
+  Mat image = imread("operators/multiply/4.png", IMREAD_GRAYSCALE);
   ocr.detectLetter(image, false);
 }
 
 void testSystem(){
+  string caffePath = _CAFFE_PATH;
 #ifdef __MACH__
-  string protoFile = "/Users/Terna/Desktop/EquationSolver/equation_solver/src/caffe-model/equation_solver.prototxt";
-  string modelFile = "/Users/Terna/Desktop/EquationSolver/equation_solver/src/caffe-model/snapshot_iter_5000.caffemodel";
+  string protoFile = caffePath + "equation_solver.prototxt";
+  string modelFile = caffePath + "snapshot_iter_5000.caffemodel";
 #else
-  string protoFile = "/home/pi/EquationSolver/equation_solver/src/caffe-model/equation_solver.prototxt";
-  string modelFile = "/home/pi/EquationSolver/equation_solver/src/caffe-model/snapshot_iter_5000.caffemodel";
+  string protoFile = caffePath + "equation_solver.prototxt";
+  string modelFile = caffePath + "snapshot_iter_5000.caffemodel";
 #endif
 
-  Mat image = imread("/home/pi/EquationSolver/equation_solver/src/data/test4.jpg", IMREAD_GRAYSCALE);
+  Mat image = imread("data/test4.jpg", IMREAD_GRAYSCALE);
   
   CharactedDetector cd(protoFile, modelFile);
   vector<char> characters;
@@ -166,10 +167,10 @@ void testSystem(){
 
 int main(int argc, const char * argv[]) {
 //  testDataExtractor("data/multiply.jpg");
-//  runDataExtractor("data/divide.jpg","/Users/Terna/Desktop/operators/divide/");
+//  runDataExtractor("data/divide.jpg","operators/divide/");
   
-//  testMnistReader("/Users/Terna/Downloads/train-images-idx3-ubyte", "/Users/Terna/Downloads/train-labels-idx1-ubyte");
-  //runMnistReader("/Users/Terna/Downloads/train-images-idx3-ubyte", "/Users/Terna/Downloads/train-labels-idx1-ubyte", "/Users/Terna/Desktop/mnistdata");
+//  testMnistReader("train-images-idx3-ubyte", "train-labels-idx1-ubyte");
+  //runMnistReader("train-images-idx3-ubyte", "train-labels-idx1-ubyte", "mnistdata");
   
 //  testOcr();
   testSystem();
