@@ -146,7 +146,7 @@ void testOcr(){
 
 void testSystem(){
 #ifdef __MACH__
-  string protoFile = "/Users/Terna/Desktop/EquationSolver/equation_solver/src/caffe-model/equation_solver.prototxt";
+  string protoFile = _CAFFE_PATH+"equation_solver.prototxt";
   string modelFile = "/Users/Terna/Desktop/EquationSolver/equation_solver/src/caffe-model/snapshot_iter_5000.caffemodel";
 #else
   string protoFile = "/home/pi/EquationSolver/equation_solver/src/caffe-model/equation_solver.prototxt";
