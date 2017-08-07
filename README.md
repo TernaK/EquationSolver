@@ -7,3 +7,5 @@ These major parts make up the system;
 - Character extraction to obtain the written equation.
 - Parsing and mathematical evaluation of the written equation.
 - Data collection, extraction, and tools to generate caffe readable datasets.
+
+Note: the model is shallow right for testing on pi.
